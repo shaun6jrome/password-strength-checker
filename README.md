@@ -20,7 +20,7 @@ Designed with a typography-driven 2026 aesthetic—clean, muted, and professiona
 
 ## 🚀 Live Demo
 
-[Host your project on Vercel/Netlify and place the live link here!]
+**[View the Live Application on Vercel](https://password-strength-checker-pearl-seven.vercel.app/)**
 
 ---
 
