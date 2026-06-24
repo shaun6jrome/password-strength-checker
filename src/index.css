@@ -54,6 +54,13 @@ body::before {
     box-shadow:
       0 0 15px rgba(0, 240, 255, 0.04),
       inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .glass-card:hover {
+    border-color: rgba(0, 240, 255, 0.12);
+    box-shadow:
+      0 0 20px rgba(0, 240, 255, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
   }
 
   .glass-card-hover {
@@ -76,6 +83,14 @@ body::before {
   .text-glow-red {
     text-shadow: 0 0 10px rgba(255, 0, 80, 0.5), 0 0 30px rgba(255, 0, 80, 0.2);
   }
+
+  /* Section stagger animation utility */
+  .stagger-1 { animation-delay: 0ms; }
+  .stagger-2 { animation-delay: 80ms; }
+  .stagger-3 { animation-delay: 160ms; }
+  .stagger-4 { animation-delay: 240ms; }
+  .stagger-5 { animation-delay: 320ms; }
+  .stagger-6 { animation-delay: 400ms; }
 }
 
 /* Transition for all interactive elements */
@@ -83,9 +98,34 @@ button, input, a {
   transition: all 0.2s ease;
 }
 
-/* Focus ring styling */
+/* Focus ring styling — accessible neon cyan */
 *:focus-visible {
   outline: 2px solid #00f0ff;
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+/* ── Range Slider Track Styling ── */
+input[type="range"]::-webkit-slider-runnable-track {
+  background: linear-gradient(90deg, #00f0ff33, #4d7cff33);
+  border-radius: 9999px;
+}
+input[type="range"]::-moz-range-track {
+  background: linear-gradient(90deg, #00f0ff33, #4d7cff33);
+  border-radius: 9999px;
+}
+
+/* ── Selection Color ── */
+::selection {
+  background: rgba(0, 240, 255, 0.25);
+  color: #ffffff;
+}
+
+/* ── Reduced motion: disable all animations for users who prefer it ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
