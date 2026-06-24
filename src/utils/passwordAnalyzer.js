@@ -146,13 +146,13 @@ function getStrengthLabel(score) {
  */
 function getStrengthColor(label) {
   const colors = {
-    'Very Strong': '#39ff14',   // neon green
-    'Strong': '#00f0ff',        // neon cyan
-    'Good': '#4d7cff',          // neon blue
-    'Fair': '#ffaa00',          // amber
-    'Weak': '#ff3355',          // red
+    'Very Strong': '#34d399',   // emerald
+    'Strong': '#60a5fa',        // blue
+    'Good': '#a78bfa',          // violet
+    'Fair': '#fbbf24',          // amber
+    'Weak': '#f87171',          // red
   };
-  return colors[label] || '#ff3355';
+  return colors[label] || '#f87171';
 }
 
 /**
@@ -165,32 +165,32 @@ function getRecommendations(password) {
   if (!password) return ['Start typing to see recommendations.'];
 
   if (password.length < 8) {
-    recs.push('🔑 Use at least 8 characters for basic security.');
+    recs.push('Use at least 8 characters for basic security.');
   }
   if (password.length < 12) {
-    recs.push('📏 Consider using 12+ characters for stronger protection.');
+    recs.push('Consider using 12+ characters for stronger protection.');
   }
   if (!VALIDATORS.hasUppercase.test(password)) {
-    recs.push('🔠 Add uppercase letters (A–Z) to increase complexity.');
+    recs.push('Add uppercase letters (A–Z) to increase complexity.');
   }
   if (!VALIDATORS.hasLowercase.test(password)) {
-    recs.push('🔡 Include lowercase letters (a–z).');
+    recs.push('Include lowercase letters (a–z).');
   }
   if (!VALIDATORS.hasNumbers.test(password)) {
-    recs.push('🔢 Add numbers (0–9) to diversify character types.');
+    recs.push('Add numbers (0–9) to diversify character types.');
   }
   if (!VALIDATORS.hasSpecial.test(password)) {
-    recs.push('✨ Include special characters (!@#$%^&*) for maximum strength.');
+    recs.push('Include special characters (!@#$%^&*) for maximum strength.');
   }
   if (hasCommonPattern(password)) {
-    recs.push('⚠️ Avoid common words and predictable patterns.');
+    recs.push('Avoid common words and predictable patterns.');
   }
   if (VALIDATORS.hasExcessiveRepetition.test(password)) {
-    recs.push('🔄 Reduce repeated characters (e.g., "aaa" or "111").');
+    recs.push('Reduce repeated characters (e.g., "aaa" or "111").');
   }
 
   if (recs.length === 0) {
-    recs.push('✅ Excellent! Your password meets all recommended criteria.');
+    recs.push('Your password meets all recommended criteria.');
   }
 
   return recs;

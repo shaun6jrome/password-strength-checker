@@ -22,7 +22,6 @@ export function estimateCrackTime(entropy) {
       seconds: 0,
       display: '—',
       color: '#6b7280',
-      icon: '⏳',
     };
   }
 
@@ -36,7 +35,6 @@ export function estimateCrackTime(entropy) {
     seconds,
     display: formatDuration(seconds),
     color: getCrackTimeColor(seconds),
-    icon: getCrackTimeIcon(seconds),
   };
 }
 
@@ -81,24 +79,11 @@ function formatDuration(seconds) {
  */
 function getCrackTimeColor(seconds) {
   const years = seconds / (365.25 * 24 * 3600);
-  if (years >= 1e6) return '#39ff14';    // neon green — millions of years
-  if (years >= 1000) return '#00f0ff';   // cyan — thousands of years
-  if (years >= 1) return '#4d7cff';      // blue — years
-  if (seconds >= 3600) return '#ffaa00'; // amber — hours
-  return '#ff3355';                       // red — seconds/minutes
+  if (years >= 1e6) return '#34d399';    // emerald
+  if (years >= 1000) return '#60a5fa';   // blue
+  if (years >= 1) return '#a78bfa';      // violet
+  if (seconds >= 3600) return '#fbbf24'; // amber
+  return '#f87171';                       // red
 }
 
-/**
- * Returns an icon based on crack time severity.
- * 
- * @param {number} seconds - Duration in seconds
- * @returns {string} Emoji icon
- */
-function getCrackTimeIcon(seconds) {
-  const years = seconds / (365.25 * 24 * 3600);
-  if (years >= 1e6) return '🏰';
-  if (years >= 1000) return '🛡️';
-  if (years >= 1) return '⏰';
-  if (seconds >= 3600) return '⚡';
-  return '💀';
-}
+

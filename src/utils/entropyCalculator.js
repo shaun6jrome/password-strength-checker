@@ -91,12 +91,12 @@ export function getSecurityExplanation(entropy) {
  */
 export function getResistanceColor(level) {
   const colors = {
-    'Military Grade': '#39ff14',
-    'Very High': '#00f0ff',
-    'High': '#4d7cff',
-    'Moderate': '#ffaa00',
-    'Low': '#ff8c00',
-    'Very Low': '#ff3355',
+    'Military Grade': '#34d399',
+    'Very High': '#60a5fa',
+    'High': '#a78bfa',
+    'Moderate': '#fbbf24',
+    'Low': '#fb923c',
+    'Very Low': '#f87171',
   };
-  return colors[level] || '#ff3355';
+  return colors[level] || '#f87171';
 }
