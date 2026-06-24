@@ -1,8 +1,26 @@
-# 🛡️ CyberShield — Password Strength Analyzer
+# CyberShield — Password Strength Analyzer
 
-A modern, cybersecurity-themed password strength analysis tool built with **React**, **Vite**, and **Tailwind CSS**. Evaluates passwords in real time with visual feedback, entropy estimation, crack time analysis, and actionable security recommendations.
+A modern, minimal password strength analysis tool built with **React**, **Vite**, and **Tailwind CSS**. Evaluates passwords in real time with visual feedback, entropy estimation, crack time analysis, and actionable security recommendations. 
 
-> ⚡ All analysis is performed **entirely in the browser**. No data is ever transmitted to a server.
+Designed with a typography-driven 2026 aesthetic—clean, muted, and professional.
+
+> **Privacy First:** All analysis is performed entirely in the browser. No data is ever transmitted to a server.
+
+---
+
+## 📸 Screenshots
+
+*(Replace the paths below with your actual screenshot files before submitting your project)*
+
+![Main Interface](screenshot-1.png)
+<br/>
+![Analysis Results](screenshot-2.png)
+
+---
+
+## 🚀 Live Demo
+
+[Host your project on Vercel/Netlify and place the live link here!]
 
 ---
 
@@ -11,15 +29,14 @@ A modern, cybersecurity-themed password strength analysis tool built with **Reac
 | Feature | Description |
 |---|---|
 | **Real-time Analysis** | Instant feedback as you type — no submit buttons needed |
-| **Strength Meter** | Animated progress bar with 5 levels (Weak → Very Strong) and score out of 100 |
+| **Strength Meter** | Progress bar with 5 levels (Weak → Very Strong) and score out of 100 |
 | **Entropy Calculation** | Shannon entropy formula: `Entropy = Length × log₂(Character Set Size)` |
 | **Crack Time Estimation** | Brute-force time estimate assuming 10 billion guesses/second |
-| **Security Checklist** | 7-item live validation checklist with real-time ✓/✗ status |
-| **Password Statistics** | Character composition breakdown (length, uppercase, lowercase, numbers, symbols) |
+| **Security Checklist** | 7-item live validation checklist with real-time pass/fail status |
+| **Password Statistics** | Character composition breakdown (length, uppercase, lowercase, digits, symbols) |
 | **Dynamic Recommendations** | Context-aware tips based on what's missing from your password |
 | **Password Generator** | Cryptographically secure generator with configurable length and character types |
-| **Breach Check Placeholder** | Ready for future HaveIBeenPwned API integration |
-| **Dark Mode UI** | Cybersecurity-themed glassmorphism design with neon accents |
+| **Minimal 2026 UI** | Clean typography, subtle zinc borders, and a muted color palette without visual noise |
 
 ---
 
@@ -43,25 +60,27 @@ Open **http://localhost:5173** in your browser.
 
 ## 🏗️ Project Structure
 
-```
+```text
 src/
 ├── components/
-│   ├── PasswordInput.jsx       # Input with show/hide, copy, clear
-│   ├── StrengthMeter.jsx       # Animated progress bar + score/100
-│   ├── SecurityChecklist.jsx   # 7-item live validation checklist
+│   ├── PasswordInput.jsx       # Input with inline show/hide, copy, clear
+│   ├── StrengthMeter.jsx       # Progress bar + score/100
+│   ├── SecurityChecklist.jsx   # 7-item live validation
 │   ├── PasswordStats.jsx       # Character composition grid
 │   ├── Recommendations.jsx     # Dynamic tips + breach check placeholder
 │   ├── EntropyCard.jsx         # Entropy calculation + resistance level
 │   ├── PasswordGenerator.jsx   # Secure random password generator
-│   └── CrackTimeCard.jsx       # Brute-force time estimation
+│   ├── CrackTimeCard.jsx       # Brute-force time estimation
+│   ├── Header.jsx              # Minimal branding header
+│   └── Footer.jsx              # Minimal footer
 ├── utils/
-│   ├── passwordAnalyzer.js     # Regex-based scoring engine (0–100)
+│   ├── passwordAnalyzer.js     # Regex-based scoring engine
 │   ├── entropyCalculator.js    # Shannon entropy (L × log₂(N))
 │   ├── crackTimeEstimator.js   # Time-to-crack based on entropy
 │   └── passwordGenerator.js    # Crypto-secure password generation
 ├── App.jsx                     # Root component + responsive layout
 ├── main.jsx                    # Entry point
-└── index.css                   # Tailwind + cyber-themed globals
+└── index.css                   # Minimal Tailwind globals
 ```
 
 ---
@@ -94,17 +113,17 @@ src/
 
 | Score | Label |
 |---|---|
-| 0–29 | 🔴 Weak |
-| 30–49 | 🟠 Fair |
-| 50–69 | 🔵 Good |
-| 70–89 | 🟢 Strong |
-| 90–100 | 💎 Very Strong |
+| 0–29 | Weak |
+| 30–49 | Fair |
+| 50–69 | Good |
+| 70–89 | Strong |
+| 90–100 | Very Strong |
 
 ---
 
 ## 🔐 Entropy Formula
 
-```
+```text
 Entropy = Length × log₂(Character Set Size)
 ```
 
@@ -130,30 +149,16 @@ Entropy = Length × log₂(Character Set Size)
 
 ---
 
-## 📱 Responsive Design
+## 🌍 Hosting & Deployment
 
-Fully responsive layout optimized for:
-- 🖥️ Desktop (1024px+)
-- 📱 Tablet (768px–1023px)
-- 📱 Mobile (< 768px)
+This project is configured as a static site and is ready to be deployed for free on platforms like Vercel or Netlify. 
 
----
-
-## ♿ Accessibility
-
-- Semantic HTML with proper heading hierarchy
-- ARIA labels on all interactive elements
-- Keyboard navigation support
-- Focus-visible indicators
-- Color contrast meeting WCAG standards
-- Screen reader-friendly status updates
+**Vercel Deployment:**
+1. Connect your GitHub account to Vercel.
+2. Import this repository.
+3. Vercel will auto-detect Vite/React settings.
+4. Deploy and receive a live URL instantly.
 
 ---
 
-## 📜 License
-
-MIT License — feel free to use, modify, and distribute.
-
----
-
-Built with 🛡️ by [shaun6jrome](https://github.com/shaun6jrome)
+Built by [shaun6jrome](https://github.com/shaun6jrome)
