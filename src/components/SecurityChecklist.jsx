@@ -21,8 +21,9 @@ const CHECKLIST_ITEMS = [
   { key: 'noExcessiveRepetition',  label: 'No excessive repetition' },
 ];
 
-export default function SecurityChecklist({ checks = {} }) {
-  const passed = CHECKLIST_ITEMS.filter((item) => checks[item.key]).length;
+export default function SecurityChecklist({ checks }) {
+  const safeChecks = checks || {};
+  const passed = CHECKLIST_ITEMS.filter((item) => safeChecks[item.key]).length;
   const total = CHECKLIST_ITEMS.length;
 
   return (
@@ -40,7 +41,7 @@ export default function SecurityChecklist({ checks = {} }) {
       {/* ── Items ───────────────────────────────────────────── */}
       <ul className="space-y-2" aria-label="Password security checklist">
         {CHECKLIST_ITEMS.map((item) => {
-          const met = !!checks[item.key];
+          const met = !!safeChecks[item.key];
           return (
             <li key={item.key} className="flex items-center gap-3">
               {/* Status dot */}
