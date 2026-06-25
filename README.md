@@ -1,4 +1,4 @@
-# CyberShield — Password Strength Analyzer
+# CyberShield — Password Strength Analyzer INTERN ID - CITS4449
 
 A modern, minimal password strength analysis tool built with **React**, **Vite**, and **Tailwind CSS**. Evaluates passwords in real time with visual feedback, entropy estimation, crack time analysis, and actionable security recommendations. 
 
